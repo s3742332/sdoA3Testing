@@ -188,9 +188,8 @@ jobs:
       - run:
            name: deploy infra
            command: |
-            cd artifacts/infra
             make init
-            make up ENV=test
+            make up
       # - run: 
       #     name: deploy app 
       #     command: |
