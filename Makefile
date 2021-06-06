@@ -34,10 +34,10 @@ kube-config:
 #######
 
 namespace-up:
-
+	kubectl create namespace test
 
 namespace-down:
-
+	kubectl delete namespace test
 ########
 # SSH
 ########
@@ -47,3 +47,6 @@ ssh-gen:
 	yes | ssh-keygen -t rsa -b 4096 -f ~/keys/ec2-key -P ''
 	chmod 0644 ~/keys/ec2-key.pub
 	chmod 0600 ~/keys/ec2-key
+
+# build:
+# 	docker build -t techtestapp:latest .

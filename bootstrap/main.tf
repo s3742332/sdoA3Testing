@@ -2,7 +2,6 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-
 resource "random_string" "tfstatename" {
   length = 6
   special = false
