@@ -188,7 +188,7 @@ jobs:
       - run:
            name: deploy infra
            command: |
-            cd ./artifacts/infra
+            cd artifacts/infra
             make init
             make up
       # - run: 
