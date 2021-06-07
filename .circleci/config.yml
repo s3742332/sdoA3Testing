@@ -204,13 +204,12 @@ workflows:
       - deploy-test:
           requires:
             - build
-            - package
       - integration-test:
           requires: 
             - build
       - package:
           requires:
             - integration-test
-          filters:
-            branches:
-              only: master
+          # filters:
+          #   branches:
+          #     only: master
