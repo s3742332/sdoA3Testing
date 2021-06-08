@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "todo"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: "todo-app"
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: "todo-app"
+    spec:
+      containers:
+         - image: cimg/base:2020.01
+           imagePullPolicy: Always
+           name: "todo-app"
+           ports: 
+            - containerPort: 80
