@@ -14,8 +14,8 @@ spec:
         app: "todo-app"
     spec:
       containers:
-         - image: cimg/base:2020.01
+         - image: 
            imagePullPolicy: Always
            name: "todo-app"
            ports: 
-            - containerPort: 80
+            - containerPort: 5000

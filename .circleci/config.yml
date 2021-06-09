@@ -176,7 +176,7 @@ jobs:
 
   deploy-test:
     docker:
-      - image: cimg/base:2020.01
+      - image: cimg/base:2021.05
     environment: 
       ENV: test
     steps:
@@ -201,9 +201,6 @@ workflows:
   build-test-package:
     jobs:
       - build
-      - deploy-test:
-          requires:
-            - build
       - integration-test:
           requires: 
             - build
@@ -213,3 +210,6 @@ workflows:
           # filters:
           #   branches:
           #     only: master
+      - deploy-test:
+          requires:
+            - build
