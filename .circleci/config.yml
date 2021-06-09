@@ -160,7 +160,6 @@ jobs:
           name: Package helm
           command: | 
             helm package helm/todo --app-version ${CIRCLE_SHA1} -d artifacts
-             mv todo-0.1.0.tgz ../artifacts/todo.tgz 
 
       - run:
           name: Package infra
@@ -195,6 +194,7 @@ jobs:
       - run: 
           name: deploy app 
           command: |
+            cd artifacts
             helm upgrade todo artifacts/todo-0.1.0.tgz -i -n test --wait --set image=$(cat artifacts/image.txt)
 
 workflows:
