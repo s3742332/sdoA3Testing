@@ -198,6 +198,8 @@ jobs:
           command: |
             helm upgrade todo artifacts/todo-0.1.0.tgz -i -n test --wait --set image=$(cat artifacts/image.txt),dbhost=$(cat artifacts/dbendpoint.txt)
 
+      - smoke-test
+
 workflows:
   version: 2
   build-test-package:
@@ -217,6 +219,3 @@ workflows:
             - build
             - integration-test
             - package
-      - smoke-test:
-          requires:
-            - deploy-test
