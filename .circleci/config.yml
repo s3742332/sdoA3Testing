@@ -195,6 +195,7 @@ jobs:
           name: deploy app 
           command: |
             cd artifacts
+            helm repo update
             helm upgrade todo artifacts/todo-0.1.0.tgz -i -n test --wait --set image=$(cat artifacts/image.txt)
 
 workflows:
