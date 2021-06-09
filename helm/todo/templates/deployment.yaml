@@ -14,7 +14,7 @@ spec:
         app: "todo-app"
     spec:
       containers:
-         - image:
+         - image: {{ .Values.image }}
            imagePullPolicy: Always
            name: "todo-app"
            ports: 
