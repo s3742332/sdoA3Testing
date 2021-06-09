@@ -34,10 +34,10 @@ kube-config:
 #######
 
 namespace-up:
-	kubectl create namespace todo
+	kubectl create namespace test
 
 namespace-down:
-	kubectl delete namespace todo
+	kubectl delete namespace test
 ########
 # SSH
 ########
