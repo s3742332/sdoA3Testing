@@ -4,3 +4,4 @@
 
 replicaCount: 3
 image: ""
+dbhost: ""

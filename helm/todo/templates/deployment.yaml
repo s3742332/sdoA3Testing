@@ -17,5 +17,8 @@ spec:
          - image: {{ .Values.image }}
            imagePullPolicy: Always
            name: "todo-app"
+           env:
+            - name: DBHOST
+              value: {{ .Values.dbhost }}
            ports: 
             - containerPort: 5000
