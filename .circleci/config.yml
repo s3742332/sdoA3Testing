@@ -129,7 +129,7 @@ jobs:
     machine: true
     environment:
       ECR: 558109743415.dkr.ecr.us-east-1.amazonaws.com
-      reponame: rmit-assignment3-container-repo:edd720871728b42f806ae2ddbfb48406d7e97c7c
+      reponame: rmit-assignment3-container-repo
     steps:
       - checkout
 
@@ -211,9 +211,9 @@ workflows:
       - package:
           requires:
             - integration-test
-          # filters:
-          #   branches:
-          #     only: master
+          filters:
+            branches:
+              only: master
       - deploy-test:
           requires:
             - build
