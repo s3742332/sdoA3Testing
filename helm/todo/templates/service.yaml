@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 5000
+      targetPort: 27017
       protocol: TCP
   type: LoadBalancer
   selector:
