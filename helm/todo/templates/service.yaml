@@ -4,8 +4,8 @@ metadata:
   name: "todo-app"
 spec:
   ports:
-    - port: 5000
-      targetPort: 27017
+    - port: 80
+      targetPort: 5000
       protocol: TCP
   type: LoadBalancer
   selector:

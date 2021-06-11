@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "todo"
+  name: "todo-app"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -9,16 +9,14 @@ spec:
       app: "todo-app"
   template:
     metadata:
-      annotations:
       labels:
         app: "todo-app"
     spec:
       containers:
-         - image: {{ .Values.image }}
-           imagePullPolicy: Always
-           name: "todo-app"
-           env:
-            - name: DBHOST
-              value: {{ .Values.dbhost }}
-           ports: 
-            - containerPort: 5000
+      - image: {{ .Values.image }}
+        name: "todo-app"
+        env:            
+          - name: DBHOST
+            value: {{ .Values.dbhost }}
+        ports: 
+        - containerPort: 5000
