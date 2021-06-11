@@ -191,12 +191,14 @@ jobs:
             cd artifacts/infra
             make init
             make up
-            terraform output db_endpoint > ../dbendpoint.txt
+            echo "mongodb://$(terraform output -raw db_user):$(terraform output -raw db_pass)@$(terraform output -raw db_endpoint)" > ../dbendpoint.txt
 
       - run: 
           name: deploy app 
           command: |
             helm upgrade todo artifacts/todo-0.1.0.tgz -i -n test --wait --set image=$(cat artifacts/image.txt),dbhost=$(cat artifacts/dbendpoint.txt)
+      
+      - run: sleep 60
 
       - smoke-test
 
