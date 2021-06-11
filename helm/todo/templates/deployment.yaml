@@ -19,4 +19,4 @@ spec:
           - name: DB_URL
             value: {{ .Values.dbhost }}
         ports: 
-        - containerPort: 5000
+        - containerPort: 27017
