@@ -16,7 +16,7 @@ spec:
       - image: {{ .Values.image }}
         name: "todo-app"
         env:            
-          - name: DBHOST
+          - name: DB_URL
             value: {{ .Values.dbhost }}
         ports: 
         - containerPort: 5000
